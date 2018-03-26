@@ -11,8 +11,6 @@ User can open home page
     [Documentation]
     Login as a test user
     Locate user
-    Switch user
-    Close Browser
 
 
 
