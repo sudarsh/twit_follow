@@ -3,11 +3,11 @@ Resource                            /Users/sudarsh/PycharmProjects/twit/testsuit
 Library                             String
 Documentation                       First test
 Library                             Selenium2Library
-Library                             Sele
+
 
 *** Variables ***
-${values}      Unfollow Unfollow @${thandle}
-${var}
+${followstate}     Follow
+${text}
 
 *** Keywords ***
 
@@ -27,35 +27,34 @@ Login as a test user
 
 
 Locate user
-|  |                                  |                                              |                                      |
-|  | click element                    | id=search-query                          |                                                     |
-|  | input text                       | id=search-query                          | ${thandle}                                          |
-|  | click element                    | //button[@type='submit']                 |                                                     |
-|  | wait until page contains         | People                                   |                                                     |
-|  | sleep                            | 3                                        |                                                     |
-|  | Wait Until Page Contains Element | link=People                              |                                                     |
-|  | click element                    | link=People                              |                                                     |
-|  | wait until page contains         | ${thandle}                               |                                                     |
-|  | sleep                            | 3                                        |                                                     |
-|  | click element                    | link=@${thandle}                         |                                                     |
-|  | sleep                            | 3                                        |                                                     |
-|  | Element Should Contain           | //h2/a/span/b                            | ${thandle}                                          |
-|  | Wait Until Page Contains Element | //span[2]/button                         |                                                     |
-|  | sleep                            | 5                                        |                                                     |
-|  | ${text}                          | Get Text                                 | css=div.including > span.user-actions-follow-button |
-|  | sleep                            | 5                                        |                                                     |
-|  | Log                              | ${text}                                  |                                                     |
-|  | Log                              | ${thandle}                               |                                                     |
-|  | run keyword if                   | '${text}' == 'Following/nFollowing'      | Follow user                                         |
-|  | ...                              | ELSE                                     | logout                                              |
-|  |                                  |                                          |                                                     |
-|  |                                  |                                          |                                                     |
+|  |                                  |                                |                                  |  |
+|  | click element                    | id=search-query                |                                  |  |
+|  | input text                       | id=search-query                | ${thandle}                       |  |
+|  | click element                    | //button[@type='submit']       |                                  |  |
+|  | wait until page contains         | People                         |                                  |  |
+|  | sleep                            | 3                              |                                  |  |
+|  | Wait Until Page Contains Element | link=People                    |                                  |  |
+|  | click element                    | link=People                    |                                  |  |
+|  | wait until page contains         | ${thandle}                     |                                  |  |
+|  | sleep                            | 3                              |                                  |  |
+|  | click element                    | link=@${thandle}               |                                  |  |
+|  | sleep                            | 3                              |                                  |  |
+|  | Element Should Contain           | //h2/a/span/b                  | ${thandle}                       |  |
+|  | Wait Until Page Contains Element | //span[2]/button               |                                  |  |
+|  | sleep                            | 5                              |                                  |  |
+|  | ${text}                          | Get Text                       | css=.follow-button >button >span |  |
+|  | sleep                            | 5                              |                                  |  |
+|  | Log                              | ${text}                        |                                  |  |
+|  | Log                              | ${thandle}                     |                                  |  |
+|  | Run keyword if                   | '${followstate}'  == '${text}' | Follow user                      |  |
+|  | ...                              | ELSE                           | Logout                           |  |
 
 Follow user
-|  | Element Should Contain           | //h2/a/span/b    | ${thandle} |
-|  | Wait Until Page Contains Element | //span[2]/button |            |
-|  | click element                    | //span[2]/button |            |
-
+|  | Element Should Contain           | //h2/a/span/b              | ${thandle} |
+|  | Wait Until Page Contains Element | css=.follow-button >button |            |
+|  | click element                    | css=.follow-button >button |            |
+|  | Logout                           |                            |            |
+|  | close Browser                    |                            |            |
 
 Logout
 
