@@ -1,17 +1,15 @@
 *** Settings ***
 
-Resource          /Users/sudarsh/PycharmProjects/twit/testsuite/Resources/page_objects/common_settings.robot
-
-
+Resource          ${CURDIR}/../Resources/page_objects/common_settings.robot
 
 
 *** Test Cases ***
 
-User can open home page
-    [Documentation]
-    Login as a test user
-    Locate user
+Search And Follow The User
 
+|  | Login To Twitter As           | smsworkz@gmail.com | welcome123 |
+|  | Search And Load Profile       | POTUS              |            |
+|  | Check User Profile And Follow |                    |            |
 
 
 
