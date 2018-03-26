@@ -1,4 +1,4 @@
-# RobotFramework Testsuite 
+# Testsuite using Robot Framework  
 
 ## How to run the Testsuite.
 
