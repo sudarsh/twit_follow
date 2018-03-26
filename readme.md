@@ -22,7 +22,7 @@ Video of [Testsuite Run ](http://take.ms/4M5ua).
      ```
 * Install [Pycharm IDE. ](https://www.jetbrains.com/pycharm/download/)
 
-   Some userful pycharm plugins
+   Some useful pycharm plugins
       
     [intellibot ](https://github.com/millennialmedia/intellibot)
        
