@@ -1,0 +1,8 @@
+.idea/
+.DS_Store
+resources/.DS_Store
+resources/custom_keywords/.DS_Store
+results/
+*.pyc
+venv
+geckodriver.log
