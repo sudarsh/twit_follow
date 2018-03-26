@@ -3,7 +3,7 @@ Library    String
 
 *** Variables ***
 ${web_url}       https://www.twitter.com/
-${browser}       firefox
+${browser}       chrome
 ${email}         smsworkz@gmail.com
 ${pass}          welcome123
-${thandle}       SrBachchan
+${thandle}       Mohanlal
